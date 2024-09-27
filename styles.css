@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@font-face {
+  font-family: "Recoleta";
+  src: url("fonts/Recoleta-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+}
+
+.carousel {
+  background-color: #003e33;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.carousel .pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: #dba14d 1px solid;
+  width: 134px;
+  height: 28px;
+  border-radius: 39px;
+}
+.carousel .pill h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f8f3f0;
+  opacity: 80%;
+}
+.carousel .headline {
+  font-family: "Recoleta", serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: #f8f3f0;
+}
+.carousel .cases {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 1080px;
+  position: relative;
+}
+.carousel .cases .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.7s ease;
+  z-index: 0;
+  position: relative;
+}
+.carousel .cases .shadow {
+  width: 1080px;
+  height: 198px;
+  background: linear-gradient(to right, #003e33 1%, rgba(10, 15, 9, 0) 25%), linear-gradient(to left, #003e33 5%, rgba(10, 15, 9, 0) 35%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.carousel .cases .case {
+  width: 252px;
+  height: 198px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 16px;
+  z-index: 0;
+}
+.carousel .cases .case .person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 14px;
+}
+.carousel .cases .case .person .person-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.carousel .cases .case .person .info {
+  display: flex;
+  flex-direction: column;
+}
+.carousel .cases .case .person .info div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+}
+.carousel .cases .case .person .info div .name {
+  font-family: "Recoleta", serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #0a0f09;
+  margin: 0;
+  margin: 0;
+}
+.carousel .cases .case .person .info div .stars {
+  color: #dba14d;
+  font-size: 17px;
+  margin-left: 6px;
+}
+.carousel .cases .case .person .info .date {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(10, 15, 9, 0.7);
+  margin: 0;
+}
+.carousel .cases .case .description {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0a0f09;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 24px;
+}
+.buttons .swipe {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: rgba(248, 243, 240, 0.4) 1px solid;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.buttons .swipe.right {
+  rotate: 180deg;
+  margin-left: 36px;
+}
+
+@media (max-width: 1222px) {
+  .carousel .cases {
+    width: 786px;
+  }
+  .carousel .cases .shadow {
+    width: 786px;
+  }
+}
+@media (max-width: 906px) {
+  .carousel .cases {
+    width: 600px;
+  }
+  .carousel .cases .shadow {
+    width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .carousel .cases {
+    width: 100%;
+  }
+  .carousel .cases .shadow {
+    display: none;
+  }
+  .carousel .cases .container {
+    padding-left: 32px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

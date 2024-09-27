@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("fonts/Recoleta-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Variables
+$font-primary: "Poppins", sans-serif;
+$font-secondary: "Recoleta", serif;
+$color-primary: #003e33;
+$color-secondary: #dba14d;
+$color-light: #f8f3f0;
+$color-dark: #0a0f09;
+$transition-duration: 0.7s;
+$case-width: 252px;
+$case-height: 198px;
+$button-size: 36px;
+$carousel-width: 1080px;
+$shadow-light: rgba($color-dark, 0);
+$shadow-dark: $color-primary;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin font-style($font-family, $font-size, $font-weight, $color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+// Base Styles
+body {
+  margin: 0;
+}
+
+.carousel {
+  background-color: $color-primary;
+  width: 100vw;
+  height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+
+  .pill {
+    @include flex-center;
+    border: $color-secondary 1px solid;
+    width: 134px;
+    height: 28px;
+    @include border-radius(39px);
+
+    h2 {
+      @include font-style($font-primary, 13px, 600, $color-light);
+      opacity: 80%;
+    }
+  }
+
+  .headline {
+    @include font-style($font-secondary, 28px, 500, $color-light);
+  }
+
+  .cases {
+    @include flex-center;
+    overflow: hidden;
+    width: $carousel-width;
+    position: relative;
+
+    .container {
+      @include flex-center;
+      transition: transform $transition-duration ease;
+      z-index: 0;
+      position: relative;
+    }
+
+    .shadow {
+      width: $carousel-width;
+      height: $case-height;
+      background: linear-gradient(to right, $shadow-dark 1%, $shadow-light 25%),
+        linear-gradient(to left, $shadow-dark 5%, $shadow-light 35%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+    }
+
+    .case {
+      width: $case-width;
+      height: $case-height;
+      background-color: white;
+      @include border-radius(12px);
+      @include flex-center;
+      flex-direction: column;
+      margin-right: 16px;
+      z-index: 0;
+
+      .person {
+        @include flex-center;
+        padding: 0 20px;
+        margin-bottom: 14px;
+
+        .person-img {
+          width: $button-size;
+          height: $button-size;
+          @include border-radius(50%);
+          margin-right: 12px;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+
+          div {
+            @include flex-center;
+            justify-content: start;
+
+            .name {
+              @include font-style($font-secondary, 17px, 500, $color-dark);
+              margin: 0;
+              margin: 0;
+            }
+
+            .stars {
+              color: $color-secondary;
+              font-size: 17px;
+              margin-left: 6px;
+            }
+          }
+          .date {
+            @include font-style(
+              $font-primary,
+              12px,
+              300,
+              rgba($color-dark, 0.7)
+            );
+            margin: 0;
+          }
+        }
+      }
+
+      .description {
+        @include font-style($font-primary, 14px, 400, $color-dark);
+        padding: 0 20px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  margin-top: 24px;
+
+  .swipe {
+    width: $button-size;
+    height: $button-size;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: rgba($color-light, 0.4) 1px solid;
+    @include border-radius(50%);
+    @include flex-center;
+    cursor: pointer;
+
+    &.right {
+      rotate: 180deg;
+      margin-left: 36px;
+    }
+  }
+}
+
+@media (max-width: 1222px) {
+  .carousel {
+    .cases {
+      width: 786px;
+
+      .shadow {
+        width: 786px;
+      }
+    }
+  }
+}
+
+@media (max-width: 906px) {
+  .carousel {
+    .cases {
+      width: 600px;
+
+      .shadow {
+        width: 600px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    .cases {
+      width: 100%;
+
+      .shadow {
+        display: none;
+      }
+
+      .container {
+        padding-left: 32px;
+      }
+    }
+  }
+}
