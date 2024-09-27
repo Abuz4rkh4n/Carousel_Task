@@ -42,6 +42,6 @@ The JavaScript code encapsulates the carousel's logic within a `Carousel` class,
 1. **Fixed Number of Visible Cases**: Assumed a constant number of visible cases (three) at a time.
 2. **Case Data**: Used a generic template for the case content, assuming the same data structure.
 3. **Responsive Design**: Implemented media queries to adjust the carousel's layout for different screen sizes.
-4. **Looping Logic**: Ensured that the carousel cycles smoothly from the last case back to the first and vice versa, without requiring extra clicks.
+4. **Looping Logic**: Ensured that the carousel cycles smoothly from the last case back to the first and vice versa.
 
 This project provides a comprehensive example of creating a responsive and interactive carousel using modern web development practices.
